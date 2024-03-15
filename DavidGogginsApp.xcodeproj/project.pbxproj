@@ -63,10 +63,10 @@
 				1C6B1C482BA0B2770043A26E /* DavidGogginsAppApp.swift */,
 				1C6B1C4A2BA0B2770043A26E /* ContentView.swift */,
 				1C6B1C5B2BA0BAF20043A26E /* AddGoalsView.swift */,
+				1CC7F2812BA0D88B000E746F /* AllGoalsView.swift */,
 				1C6B1C562BA0B30E0043A26E /* RealityView.swift */,
 				1C6B1C4C2BA0B2780043A26E /* Assets.xcassets */,
 				1C6B1C4E2BA0B2780043A26E /* Preview Content */,
-				1CC7F2812BA0D88B000E746F /* AllGoalsView.swift */,
 			);
 			path = DavidGogginsApp;
 			sourceTree = "<group>";

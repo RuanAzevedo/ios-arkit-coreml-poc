@@ -20,10 +20,10 @@ struct CircleButton: View {
         } label: {
             Image(systemName: iconName)
                 .frame(width: 75, height: 75, alignment: .center)
-                .background(.yellow)
+                .background(Color("Primary"))
                 .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
                 .font(.largeTitle)
-                .foregroundColor(.white)
+                .foregroundColor(Color("Accent"))
         }
     }
 }

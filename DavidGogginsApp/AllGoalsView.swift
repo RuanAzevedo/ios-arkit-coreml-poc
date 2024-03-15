@@ -22,7 +22,7 @@ struct AllGoalsView: View {
            // Text
             Text("Your Goals")
                 .font(.largeTitle.bold())
-                .foregroundColor(.white)
+                .foregroundColor(Color("Accent"))
                 .padding(.leading)
             
             // List View
@@ -36,9 +36,9 @@ struct AllGoalsView: View {
                 })
             }
             .scrollContentBackground(.hidden)
-            .background(.blue)
+            .background(Color("Secondary"))
         }
-        .background(.blue)
+        .background(Color("Secondary"))
     }
 }
 
@@ -47,8 +47,8 @@ struct ListRow: View {
     
     var body: some View {
         Text(text)
-            .listRowBackground(Color.yellow)
-            .foregroundColor(.black)
+            .listRowBackground(Color("Primary"))
+            .foregroundColor(Color("Accent"))
             .font(.body.bold())
     }
 }

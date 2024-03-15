@@ -14,20 +14,20 @@ struct AddGoalsView: View {
     var body: some View {
         
         ZStack {
-            Color.blue.ignoresSafeArea()
+            Color("Secondary").ignoresSafeArea()
             
             VStack(spacing: 20) {
                 
                 // Image
                 Image(systemName: "bolt.fill")
                     .font(.system(size: 150))
-                    .foregroundColor(.yellow)
+                    .foregroundColor(Color("Primary"))
                     .shadow(radius: 30)
                 
                 // Title
                 Text("What is your goal?")
                     .font(.largeTitle.bold())
-                    .foregroundColor(.white)
+                    .foregroundColor(Color("Accent"))
                 
                 TextField("", text: $inputText)
                     .frame(height: 60)
@@ -35,7 +35,7 @@ struct AddGoalsView: View {
                     .foregroundColor(Color.white)
                     .textFieldStyle(PlainTextFieldStyle())
                     .padding()
-                    .overlay(RoundedRectangle(cornerRadius: 16).stroke(Color.white))
+                    .overlay(RoundedRectangle(cornerRadius: 16).stroke(Color("Primary")))
                     .padding()
                 
                 // Buttons (for accepting and rejecting)
