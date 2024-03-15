@@ -8,14 +8,34 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State var isAddGoalsViewShowing = false
+    @State var isAllGoalsViewShowing = false
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        
+        ZStack(alignment: .bottom) {
+            // ARView
+            RealityView().ignoresSafeArea()
+            
+            // Buttons
+            HStack(spacing: 20) {
+                CircleButton(iconName: "plus") {
+                    isAddGoalsViewShowing = true
+                }
+                .popover(isPresented: $isAddGoalsViewShowing) {
+                    AddGoalsView()
+                }
+                
+                CircleButton(iconName: "view.2d") {
+                    // Show All Goals View
+                    isAllGoalsViewShowing = true
+                }
+                .popover(isPresented: $isAllGoalsViewShowing) {
+                    AllGoalsView()
+                }
+            }
         }
-        .padding()
     }
 }
 

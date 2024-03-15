@@ -11,6 +11,10 @@
 		1C6B1C4B2BA0B2770043A26E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6B1C4A2BA0B2770043A26E /* ContentView.swift */; };
 		1C6B1C4D2BA0B2780043A26E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C6B1C4C2BA0B2780043A26E /* Assets.xcassets */; };
 		1C6B1C502BA0B2780043A26E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C6B1C4F2BA0B2780043A26E /* Preview Assets.xcassets */; };
+		1C6B1C572BA0B30E0043A26E /* RealityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6B1C562BA0B30E0043A26E /* RealityView.swift */; };
+		1C6B1C5A2BA0B6F90043A26E /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6B1C592BA0B6F90043A26E /* CircleButton.swift */; };
+		1C6B1C5C2BA0BAF20043A26E /* AddGoalsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6B1C5B2BA0BAF20043A26E /* AddGoalsView.swift */; };
+		1CC7F2822BA0D88B000E746F /* AllGoalsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC7F2812BA0D88B000E746F /* AllGoalsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +23,10 @@
 		1C6B1C4A2BA0B2770043A26E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		1C6B1C4C2BA0B2780043A26E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1C6B1C4F2BA0B2780043A26E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		1C6B1C562BA0B30E0043A26E /* RealityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealityView.swift; sourceTree = "<group>"; };
+		1C6B1C592BA0B6F90043A26E /* CircleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButton.swift; sourceTree = "<group>"; };
+		1C6B1C5B2BA0BAF20043A26E /* AddGoalsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGoalsView.swift; sourceTree = "<group>"; };
+		1CC7F2812BA0D88B000E746F /* AllGoalsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllGoalsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,10 +59,14 @@
 		1C6B1C472BA0B2770043A26E /* DavidGogginsApp */ = {
 			isa = PBXGroup;
 			children = (
+				1C6B1C582BA0B6CF0043A26E /* Components */,
 				1C6B1C482BA0B2770043A26E /* DavidGogginsAppApp.swift */,
 				1C6B1C4A2BA0B2770043A26E /* ContentView.swift */,
+				1C6B1C5B2BA0BAF20043A26E /* AddGoalsView.swift */,
+				1C6B1C562BA0B30E0043A26E /* RealityView.swift */,
 				1C6B1C4C2BA0B2780043A26E /* Assets.xcassets */,
 				1C6B1C4E2BA0B2780043A26E /* Preview Content */,
+				1CC7F2812BA0D88B000E746F /* AllGoalsView.swift */,
 			);
 			path = DavidGogginsApp;
 			sourceTree = "<group>";
@@ -65,6 +77,14 @@
 				1C6B1C4F2BA0B2780043A26E /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		1C6B1C582BA0B6CF0043A26E /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				1C6B1C592BA0B6F90043A26E /* CircleButton.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,7 +158,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				1C6B1C4B2BA0B2770043A26E /* ContentView.swift in Sources */,
+				1CC7F2822BA0D88B000E746F /* AllGoalsView.swift in Sources */,
+				1C6B1C572BA0B30E0043A26E /* RealityView.swift in Sources */,
 				1C6B1C492BA0B2770043A26E /* DavidGogginsAppApp.swift in Sources */,
+				1C6B1C5A2BA0B6F90043A26E /* CircleButton.swift in Sources */,
+				1C6B1C5C2BA0BAF20043A26E /* AddGoalsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,11 +299,13 @@
 				DEVELOPMENT_TEAM = P4G624Q9ZA;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "\"Need to use camera to enable AR. Please allow.\"";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -304,11 +330,13 @@
 				DEVELOPMENT_TEAM = P4G624Q9ZA;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "\"Need to use camera to enable AR. Please allow.\"";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
