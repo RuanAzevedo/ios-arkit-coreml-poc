@@ -33,6 +33,17 @@ struct MainView: View {
                 .popover(isPresented: $mainViewModel.isAllGoalsViewShowing) {
                     AllGoalsView()
                 }
+                
+                // Dummy Button
+                CircleButton(iconName: "video") {
+                    RealityViewManager.shared.playTextVideo()
+                }
+                
+                // Dummy Button
+                CircleButton(iconName: "video.slash") {
+                    RealityViewManager.shared.stopTextVideo()
+                }
+                
             }
         }
         .onAppear {

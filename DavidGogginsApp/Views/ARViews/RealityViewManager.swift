@@ -14,6 +14,7 @@ class RealityViewManager {
     static let shared = RealityViewManager()
     
     let arView = ARView(frame: .zero)
+    var currentTextModel: ModelEntity?
     
     // Start FaceTracking
     func startARSession() {
@@ -28,13 +29,13 @@ class RealityViewManager {
         let faceAnchorEntity = AnchorEntity(anchor: arFaceAnchor)
         
         // 2. Create Box (Model Entity)
-        let textModel = createTextModel(with: "David Goggins")
+        currentTextModel = createTextModel(with: "David Goggins")
         
         // 3. Set Text Position To Top Of Face
-        setTextPosition(textModel: textModel, faceAnchor: arFaceAnchor)
+        setTextPosition(textModel: currentTextModel!, faceAnchor: arFaceAnchor)
         
         // 4. Attach Box to FaceAnchorEntity
-        faceAnchorEntity.addChild(textModel)
+        faceAnchorEntity.addChild(currentTextModel!)
         
         // 4. Add FaceAnchorEntity to ARView
         arView.scene.addAnchor(faceAnchorEntity)
@@ -68,6 +69,26 @@ class RealityViewManager {
         
         // 2. Set the text offset
         textModel.setPosition(offset, relativeTo: textModel.parent)
+    }
+    
+    // Play/Stop Text Video
+    func playTextVideo() {
+        guard let currentTextModel = currentTextModel else {
+            return
+        }
+        
+        // Change material to a video material (for textModel)
+        VideoMaterialManager.shared.enableVideo(for: currentTextModel)
+    }
+    
+    func stopTextVideo() {
+        // Check if text exists
+        guard let currentTextModel = currentTextModel else {
+            return
+        }
+        
+        // Change material to a simple material (for textModel)
+        VideoMaterialManager.shared.disableVideo(for: currentTextModel)
     }
 }
 
