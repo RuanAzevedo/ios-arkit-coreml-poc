@@ -15,7 +15,18 @@ struct MainView: View {
         
         ZStack(alignment: .bottom) {
             // ARView
-            RealityView().ignoresSafeArea()
+            RealityView()
+                .ignoresSafeArea()
+                .gesture(
+                    DragGesture(minimumDistance: 0, coordinateSpace: .local)
+                        .onEnded({ value in
+                            if(value.translation.width > 0) {
+                                // Dispay next goal
+                                mainViewModel.displayNextGoal()
+                            }
+                        })
+                )
+            
             
             // Buttons
             HStack(spacing: 20) {

@@ -16,6 +16,8 @@ class RealityViewManager {
     let arView = ARView(frame: .zero)
     var currentTextModel: ModelEntity?
     
+    var arFaceAnchor: ARFaceAnchor?
+    
     // Start FaceTracking
     func startARSession() {
         let configuration = ARFaceTrackingConfiguration()
@@ -24,12 +26,20 @@ class RealityViewManager {
         arView.session.run(configuration)
     }
     
-    func placeTextOnFace(arFaceAnchor: ARFaceAnchor) {
+    func displayGoalInAR(goalText: String){
+        // 1. Check if face anchor exists
+        guard let arFaceAnchor = arFaceAnchor else {return}
+        
+        // 2. Place text on face
+        placeTextOnFace(text: goalText, arFaceAnchor: arFaceAnchor)
+    }
+    
+    private func placeTextOnFace(text: String, arFaceAnchor: ARFaceAnchor) {
         // 1. FaceAnchor Entity (anchors to the face)
         let faceAnchorEntity = AnchorEntity(anchor: arFaceAnchor)
         
         // 2. Create Box (Model Entity)
-        currentTextModel = createTextModel(with: "David Goggins")
+        currentTextModel = createTextModel(with: text)
         
         // 3. Set Text Position To Top Of Face
         setTextPosition(textModel: currentTextModel!, faceAnchor: arFaceAnchor)
@@ -80,7 +90,6 @@ class RealityViewManager {
         // Change material to a video material (for textModel)
         VideoMaterialManager.shared.enableVideo(for: currentTextModel)
     }
-    
     func stopTextVideo() {
         // Check if text exists
         guard let currentTextModel = currentTextModel else {
@@ -99,8 +108,7 @@ class Coordinator: NSObject, ARSessionDelegate {
             // 1. Get Access to FaceAnchor
             guard let faceAnchor = anchor as? ARFaceAnchor else {return}
             
-            // 2. Place Box Onto FaceAnchor
-            RealityViewManager.shared.placeTextOnFace(arFaceAnchor: faceAnchor)
+            RealityViewManager.shared.arFaceAnchor = faceAnchor
         }
         
     }
