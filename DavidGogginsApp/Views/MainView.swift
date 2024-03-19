@@ -35,6 +35,9 @@ struct MainView: View {
                 }
             }
         }
+        .onAppear {
+            RealityViewManager.shared.startARSession()
+        }
     }
 }
 

@@ -10,12 +10,18 @@ import SwiftUI
 import RealityKit
 
 struct RealityView: UIViewRepresentable {
+    
     func makeUIView(context: Context) -> some ARView {
-        let arView = ARView(frame: .zero)
-        return arView
+        RealityViewManager.shared.arView.session.delegate = context.coordinator
+        
+        return RealityViewManager.shared.arView
     }
     
     func updateUIView(_ uiView: UIViewType, context: Context) {
-        //
+        
+    }
+    
+    func makeCoordinator() -> Coordinator {
+        return Coordinator()
     }
 }
