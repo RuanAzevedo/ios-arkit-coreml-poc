@@ -16,6 +16,24 @@ class RealityViewManager: ObservableObject {
     let arView = ARView(frame: .zero)
     var currentTextModel: ModelEntity?
     
+    var currentHandPose: Classification? {
+        didSet {
+            
+            if(oldValue == currentHandPose) {return}
+            
+            switch currentHandPose {
+            case .open:
+                playTextVideo()
+            case .close:
+                stopTextVideo()
+            case .background:
+                stopTextVideo()
+            default:
+                stopTextVideo()
+            }
+        }
+    }
+    
     @Published var arFaceAnchor: ARFaceAnchor?
     
     // Start FaceTracking
@@ -36,7 +54,6 @@ class RealityViewManager: ObservableObject {
         // 3. Place text on face
         placeTextOnFace(text: goalText, arFaceAnchor: arFaceAnchor)
     }
-    
     private func placeTextOnFace(text: String, arFaceAnchor: ARFaceAnchor) {
         // 1. FaceAnchor Entity (anchors to the face)
         let faceAnchorEntity = AnchorEntity(anchor: arFaceAnchor)
@@ -111,7 +128,12 @@ class RealityViewManager: ObservableObject {
 
 class Coordinator: NSObject, ARSessionDelegate {
     
+    let mlManager = MLManager()
+    var frameCounter = 0
+    
+    // On Anchor Added
     func session(_ session: ARSession, didAdd anchors: [ARAnchor]) {
+                
         for anchor in anchors {
             // 1. Get Access to FaceAnchor
             guard let faceAnchor = anchor as? ARFaceAnchor else {return}
@@ -119,6 +141,17 @@ class Coordinator: NSObject, ARSessionDelegate {
             RealityViewManager.shared.arFaceAnchor = faceAnchor
         }
         
+    }
+    
+    // On New Frame
+    func session(_ session: ARSession, didUpdate frame: ARFrame) {
+        frameCounter+=1
+        
+        // Skipping every 5 frames
+        if(frameCounter%5 == 0) {
+            guard let classification = mlManager.classifyFrame(frame: frame) else {return}
+            RealityViewManager.shared.currentHandPose = classification
+        }
     }
     
 }

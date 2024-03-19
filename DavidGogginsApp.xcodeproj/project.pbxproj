@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C49AE042BAA33D900F8E405 /* HandPoseClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 1C49AE032BAA33D900F8E405 /* HandPoseClassifier.mlmodel */; };
+		1C49AE062BAA340700F8E405 /* MLManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C49AE052BAA340700F8E405 /* MLManager.swift */; };
 		1C6B1C492BA0B2770043A26E /* DavidGogginsAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6B1C482BA0B2770043A26E /* DavidGogginsAppApp.swift */; };
 		1C6B1C4B2BA0B2770043A26E /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6B1C4A2BA0B2770043A26E /* MainView.swift */; };
 		1C6B1C4D2BA0B2780043A26E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C6B1C4C2BA0B2780043A26E /* Assets.xcassets */; };
@@ -26,6 +28,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1C49AE032BAA33D900F8E405 /* HandPoseClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = HandPoseClassifier.mlmodel; path = ../../../../../Downloads/SourceCode/ML/HandPoseClassifier.mlmodel; sourceTree = "<group>"; };
+		1C49AE052BAA340700F8E405 /* MLManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLManager.swift; sourceTree = "<group>"; };
 		1C6B1C452BA0B2770043A26E /* DavidGogginsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DavidGogginsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C6B1C482BA0B2770043A26E /* DavidGogginsAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DavidGogginsAppApp.swift; sourceTree = "<group>"; };
 		1C6B1C4A2BA0B2770043A26E /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -105,9 +109,11 @@
 		1CA5A7142BA9460C00B8AAA0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1C49AE032BAA33D900F8E405 /* HandPoseClassifier.mlmodel */,
 				1C805D132BA4DF440006B88F /* Database.xcdatamodeld */,
 				1C805D112BA4DD3D0006B88F /* PersistenceManager.swift */,
 				1CA5A7212BA9F2D500B8AAA0 /* VideoMaterialManager.swift */,
+				1C49AE052BAA340700F8E405 /* MLManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -214,6 +220,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C49AE062BAA340700F8E405 /* MLManager.swift in Sources */,
 				1C6B1C4B2BA0B2770043A26E /* MainView.swift in Sources */,
 				1CC7F2822BA0D88B000E746F /* AllGoalsView.swift in Sources */,
 				1C805D152BA4DF440006B88F /* Database.xcdatamodeld in Sources */,
@@ -223,6 +230,7 @@
 				1C6B1C5A2BA0B6F90043A26E /* CircleButton.swift in Sources */,
 				1CA5A7202BA94F9F00B8AAA0 /* RealityViewManager.swift in Sources */,
 				1C6B1C5C2BA0BAF20043A26E /* AddGoalsView.swift in Sources */,
+				1C49AE042BAA33D900F8E405 /* HandPoseClassifier.mlmodel in Sources */,
 				1CA5A7192BA9485600B8AAA0 /* AddGoalsViewModel.swift in Sources */,
 				1C805D122BA4DD3D0006B88F /* PersistenceManager.swift in Sources */,
 				1CA5A7172BA946EB00B8AAA0 /* MainViewModel.swift in Sources */,
