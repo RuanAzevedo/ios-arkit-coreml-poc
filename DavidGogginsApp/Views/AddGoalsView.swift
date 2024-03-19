@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AddGoalsView: View {
     
-    @State var inputText = ""
+    @ObservedObject var addGoalsViewModel = AddGoalsViewModel()
     
     @Binding var isViewShowing: Bool
     
@@ -31,7 +31,7 @@ struct AddGoalsView: View {
                     .font(.largeTitle.bold())
                     .foregroundColor(Color("Accent"))
                 
-                TextField("", text: $inputText)
+                TextField("", text: $addGoalsViewModel.inputText)
                     .frame(height: 60)
                     .font(.system(size: 23))
                     .foregroundColor(Color.white)
@@ -49,9 +49,7 @@ struct AddGoalsView: View {
                     
                     CircleButton(iconName: "checkmark") {
                         // CRUD: Create a new goal
-                        if(inputText != ""){
-                            PersistenceManager.shared.createGoal(text: inputText)
-                        }
+                        addGoalsViewModel.createGoal()
                         
                         // Dismiss
                         isViewShowing = false

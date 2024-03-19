@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1C6B1C492BA0B2770043A26E /* DavidGogginsAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6B1C482BA0B2770043A26E /* DavidGogginsAppApp.swift */; };
-		1C6B1C4B2BA0B2770043A26E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6B1C4A2BA0B2770043A26E /* ContentView.swift */; };
+		1C6B1C4B2BA0B2770043A26E /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6B1C4A2BA0B2770043A26E /* MainView.swift */; };
 		1C6B1C4D2BA0B2780043A26E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C6B1C4C2BA0B2780043A26E /* Assets.xcassets */; };
 		1C6B1C502BA0B2780043A26E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C6B1C4F2BA0B2780043A26E /* Preview Assets.xcassets */; };
 		1C6B1C572BA0B30E0043A26E /* RealityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6B1C562BA0B30E0043A26E /* RealityView.swift */; };
@@ -16,13 +16,16 @@
 		1C6B1C5C2BA0BAF20043A26E /* AddGoalsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6B1C5B2BA0BAF20043A26E /* AddGoalsView.swift */; };
 		1C805D122BA4DD3D0006B88F /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C805D112BA4DD3D0006B88F /* PersistenceManager.swift */; };
 		1C805D152BA4DF440006B88F /* Database.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1C805D132BA4DF440006B88F /* Database.xcdatamodeld */; };
+		1CA5A7172BA946EB00B8AAA0 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA5A7162BA946EB00B8AAA0 /* MainViewModel.swift */; };
+		1CA5A7192BA9485600B8AAA0 /* AddGoalsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA5A7182BA9485600B8AAA0 /* AddGoalsViewModel.swift */; };
+		1CA5A71C2BA94A1300B8AAA0 /* AllGoalsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA5A71B2BA94A1300B8AAA0 /* AllGoalsViewModel.swift */; };
 		1CC7F2822BA0D88B000E746F /* AllGoalsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC7F2812BA0D88B000E746F /* AllGoalsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1C6B1C452BA0B2770043A26E /* DavidGogginsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DavidGogginsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C6B1C482BA0B2770043A26E /* DavidGogginsAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DavidGogginsAppApp.swift; sourceTree = "<group>"; };
-		1C6B1C4A2BA0B2770043A26E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		1C6B1C4A2BA0B2770043A26E /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		1C6B1C4C2BA0B2780043A26E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1C6B1C4F2BA0B2780043A26E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1C6B1C562BA0B30E0043A26E /* RealityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealityView.swift; sourceTree = "<group>"; };
@@ -30,6 +33,9 @@
 		1C6B1C5B2BA0BAF20043A26E /* AddGoalsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGoalsView.swift; sourceTree = "<group>"; };
 		1C805D112BA4DD3D0006B88F /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
 		1C805D142BA4DF440006B88F /* Database.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Database.xcdatamodel; sourceTree = "<group>"; };
+		1CA5A7162BA946EB00B8AAA0 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		1CA5A7182BA9485600B8AAA0 /* AddGoalsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGoalsViewModel.swift; sourceTree = "<group>"; };
+		1CA5A71B2BA94A1300B8AAA0 /* AllGoalsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllGoalsViewModel.swift; sourceTree = "<group>"; };
 		1CC7F2812BA0D88B000E746F /* AllGoalsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllGoalsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -63,16 +69,12 @@
 		1C6B1C472BA0B2770043A26E /* DavidGogginsApp */ = {
 			isa = PBXGroup;
 			children = (
+				1CA5A7152BA9461400B8AAA0 /* Views */,
+				1CA5A7142BA9460C00B8AAA0 /* Model */,
 				1C6B1C582BA0B6CF0043A26E /* Components */,
 				1C6B1C482BA0B2770043A26E /* DavidGogginsAppApp.swift */,
-				1C6B1C4A2BA0B2770043A26E /* ContentView.swift */,
-				1C6B1C5B2BA0BAF20043A26E /* AddGoalsView.swift */,
-				1CC7F2812BA0D88B000E746F /* AllGoalsView.swift */,
-				1C6B1C562BA0B30E0043A26E /* RealityView.swift */,
-				1C805D112BA4DD3D0006B88F /* PersistenceManager.swift */,
 				1C6B1C4C2BA0B2780043A26E /* Assets.xcassets */,
 				1C6B1C4E2BA0B2780043A26E /* Preview Content */,
-				1C805D132BA4DF440006B88F /* Database.xcdatamodeld */,
 			);
 			path = DavidGogginsApp;
 			sourceTree = "<group>";
@@ -91,6 +93,29 @@
 				1C6B1C592BA0B6F90043A26E /* CircleButton.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		1CA5A7142BA9460C00B8AAA0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1C805D132BA4DF440006B88F /* Database.xcdatamodeld */,
+				1C805D112BA4DD3D0006B88F /* PersistenceManager.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1CA5A7152BA9461400B8AAA0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1C6B1C4A2BA0B2770043A26E /* MainView.swift */,
+				1CA5A7162BA946EB00B8AAA0 /* MainViewModel.swift */,
+				1C6B1C5B2BA0BAF20043A26E /* AddGoalsView.swift */,
+				1CA5A7182BA9485600B8AAA0 /* AddGoalsViewModel.swift */,
+				1CC7F2812BA0D88B000E746F /* AllGoalsView.swift */,
+				1CA5A71B2BA94A1300B8AAA0 /* AllGoalsViewModel.swift */,
+				1C6B1C562BA0B30E0043A26E /* RealityView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,14 +188,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1C6B1C4B2BA0B2770043A26E /* ContentView.swift in Sources */,
+				1C6B1C4B2BA0B2770043A26E /* MainView.swift in Sources */,
 				1CC7F2822BA0D88B000E746F /* AllGoalsView.swift in Sources */,
 				1C805D152BA4DF440006B88F /* Database.xcdatamodeld in Sources */,
 				1C6B1C572BA0B30E0043A26E /* RealityView.swift in Sources */,
 				1C6B1C492BA0B2770043A26E /* DavidGogginsAppApp.swift in Sources */,
+				1CA5A71C2BA94A1300B8AAA0 /* AllGoalsViewModel.swift in Sources */,
 				1C6B1C5A2BA0B6F90043A26E /* CircleButton.swift in Sources */,
 				1C6B1C5C2BA0BAF20043A26E /* AddGoalsView.swift in Sources */,
+				1CA5A7192BA9485600B8AAA0 /* AddGoalsViewModel.swift in Sources */,
 				1C805D122BA4DD3D0006B88F /* PersistenceManager.swift in Sources */,
+				1CA5A7172BA946EB00B8AAA0 /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

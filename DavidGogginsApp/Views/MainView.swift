@@ -7,10 +7,9 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct MainView: View {
     
-    @State var isAddGoalsViewShowing = false
-    @State var isAllGoalsViewShowing = false
+    @StateObject var mainViewModel = MainViewModel()
     
     var body: some View {
         
@@ -21,17 +20,17 @@ struct ContentView: View {
             // Buttons
             HStack(spacing: 20) {
                 CircleButton(iconName: "plus") {
-                    isAddGoalsViewShowing = true
+                    mainViewModel.isAddGoalsViewShowing = true
                 }
-                .popover(isPresented: $isAddGoalsViewShowing) {
-                    AddGoalsView(isViewShowing: $isAddGoalsViewShowing)
+                .popover(isPresented: $mainViewModel.isAddGoalsViewShowing) {
+                    AddGoalsView(isViewShowing: $mainViewModel.isAddGoalsViewShowing)
                 }
                 
                 CircleButton(iconName: "view.2d") {
                     // Show All Goals View
-                    isAllGoalsViewShowing = true
+                    mainViewModel.isAllGoalsViewShowing = true
                 }
-                .popover(isPresented: $isAllGoalsViewShowing) {
+                .popover(isPresented: $mainViewModel.isAllGoalsViewShowing) {
                     AllGoalsView()
                 }
             }
@@ -40,5 +39,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    MainView()
 }
