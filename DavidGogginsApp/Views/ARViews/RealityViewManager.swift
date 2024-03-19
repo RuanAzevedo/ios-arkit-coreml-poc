@@ -9,14 +9,14 @@ import Foundation
 import RealityKit
 import ARKit
 
-class RealityViewManager {
+class RealityViewManager: ObservableObject {
     
     static let shared = RealityViewManager()
     
     let arView = ARView(frame: .zero)
     var currentTextModel: ModelEntity?
     
-    var arFaceAnchor: ARFaceAnchor?
+    @Published var arFaceAnchor: ARFaceAnchor?
     
     // Start FaceTracking
     func startARSession() {

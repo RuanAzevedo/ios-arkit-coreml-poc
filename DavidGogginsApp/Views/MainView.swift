@@ -10,6 +10,7 @@ import SwiftUI
 struct MainView: View {
     
     @StateObject var mainViewModel = MainViewModel()
+    @ObservedObject var realityViewManager = RealityViewManager.shared
     
     var body: some View {
         
@@ -67,6 +68,9 @@ struct MainView: View {
             
             // Starts the ARSession
             RealityViewManager.shared.startARSession()
+        }
+        .onChange(of: realityViewManager.arFaceAnchor) { faceAnchor in
+            mainViewModel.displayNextGoal()
         }
     }
 }
