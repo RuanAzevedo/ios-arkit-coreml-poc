@@ -11,6 +11,8 @@ struct AddGoalsView: View {
     
     @State var inputText = ""
     
+    @Binding var isViewShowing: Bool
+    
     var body: some View {
         
         ZStack {
@@ -41,11 +43,19 @@ struct AddGoalsView: View {
                 // Buttons (for accepting and rejecting)
                 HStack(spacing: 20) {
                     CircleButton(iconName: "xmark") {
-                        //
+                        // Dismiss
+                        isViewShowing = false
                     }
                     
                     CircleButton(iconName: "checkmark") {
-                        //
+                        // CRUD: Create a new goal
+                        if(inputText != ""){
+                            PersistenceManager.shared.createGoal(text: inputText)
+                        }
+                        
+                        // Dismiss
+                        isViewShowing = false
+                        
                     }
                 }
                 // Buttons
@@ -58,5 +68,5 @@ struct AddGoalsView: View {
 }
 
 #Preview {
-    AddGoalsView()
+    AddGoalsView( isViewShowing: .constant(true))
 }

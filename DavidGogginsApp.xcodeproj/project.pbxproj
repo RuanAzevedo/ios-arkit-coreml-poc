@@ -14,6 +14,8 @@
 		1C6B1C572BA0B30E0043A26E /* RealityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6B1C562BA0B30E0043A26E /* RealityView.swift */; };
 		1C6B1C5A2BA0B6F90043A26E /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6B1C592BA0B6F90043A26E /* CircleButton.swift */; };
 		1C6B1C5C2BA0BAF20043A26E /* AddGoalsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6B1C5B2BA0BAF20043A26E /* AddGoalsView.swift */; };
+		1C805D122BA4DD3D0006B88F /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C805D112BA4DD3D0006B88F /* PersistenceManager.swift */; };
+		1C805D152BA4DF440006B88F /* Database.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1C805D132BA4DF440006B88F /* Database.xcdatamodeld */; };
 		1CC7F2822BA0D88B000E746F /* AllGoalsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC7F2812BA0D88B000E746F /* AllGoalsView.swift */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +28,8 @@
 		1C6B1C562BA0B30E0043A26E /* RealityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealityView.swift; sourceTree = "<group>"; };
 		1C6B1C592BA0B6F90043A26E /* CircleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButton.swift; sourceTree = "<group>"; };
 		1C6B1C5B2BA0BAF20043A26E /* AddGoalsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGoalsView.swift; sourceTree = "<group>"; };
+		1C805D112BA4DD3D0006B88F /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
+		1C805D142BA4DF440006B88F /* Database.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Database.xcdatamodel; sourceTree = "<group>"; };
 		1CC7F2812BA0D88B000E746F /* AllGoalsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllGoalsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -65,8 +69,10 @@
 				1C6B1C5B2BA0BAF20043A26E /* AddGoalsView.swift */,
 				1CC7F2812BA0D88B000E746F /* AllGoalsView.swift */,
 				1C6B1C562BA0B30E0043A26E /* RealityView.swift */,
+				1C805D112BA4DD3D0006B88F /* PersistenceManager.swift */,
 				1C6B1C4C2BA0B2780043A26E /* Assets.xcassets */,
 				1C6B1C4E2BA0B2780043A26E /* Preview Content */,
+				1C805D132BA4DF440006B88F /* Database.xcdatamodeld */,
 			);
 			path = DavidGogginsApp;
 			sourceTree = "<group>";
@@ -159,10 +165,12 @@
 			files = (
 				1C6B1C4B2BA0B2770043A26E /* ContentView.swift in Sources */,
 				1CC7F2822BA0D88B000E746F /* AllGoalsView.swift in Sources */,
+				1C805D152BA4DF440006B88F /* Database.xcdatamodeld in Sources */,
 				1C6B1C572BA0B30E0043A26E /* RealityView.swift in Sources */,
 				1C6B1C492BA0B2770043A26E /* DavidGogginsAppApp.swift in Sources */,
 				1C6B1C5A2BA0B6F90043A26E /* CircleButton.swift in Sources */,
 				1C6B1C5C2BA0BAF20043A26E /* AddGoalsView.swift in Sources */,
+				1C805D122BA4DD3D0006B88F /* PersistenceManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -372,6 +380,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		1C805D132BA4DF440006B88F /* Database.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				1C805D142BA4DF440006B88F /* Database.xcdatamodel */,
+			);
+			currentVersion = 1C805D142BA4DF440006B88F /* Database.xcdatamodel */;
+			path = Database.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 1C6B1C3D2BA0B2770043A26E /* Project object */;
 }

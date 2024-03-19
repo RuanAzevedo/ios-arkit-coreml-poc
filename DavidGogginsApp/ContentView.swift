@@ -24,7 +24,7 @@ struct ContentView: View {
                     isAddGoalsViewShowing = true
                 }
                 .popover(isPresented: $isAddGoalsViewShowing) {
-                    AddGoalsView()
+                    AddGoalsView(isViewShowing: $isAddGoalsViewShowing)
                 }
                 
                 CircleButton(iconName: "view.2d") {

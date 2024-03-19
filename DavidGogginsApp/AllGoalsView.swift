@@ -9,13 +9,7 @@ import SwiftUI
 
 struct AllGoalsView: View {
     
-    var allGoals: [String] = [
-        "10 pomodoros a day",
-        "Workout",
-        "Wake up at 5:00 AM",
-        "Create youtube content",
-        "Eat healthy"
-    ]
+    @State private var allGoals: [Goal] = []
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -29,16 +23,27 @@ struct AllGoalsView: View {
             List {
                 ForEach(allGoals, id: \.self) { goal in
                     // Goal View
-                    ListRow(text: goal)
+                    ListRow(text: goal.goalText!)
                 }
                 .onDelete(perform: { indexSet in
                     // Delete logic
+                    for index in indexSet {
+                        let goalToDelete = allGoals[index]
+                        PersistenceManager.shared.deleteGoal(goal: goalToDelete)
+                        
+                        // Delete it from goals array
+                        allGoals.remove(at: index)
+                    }
                 })
             }
             .scrollContentBackground(.hidden)
             .background(Color("Secondary"))
         }
         .background(Color("Secondary"))
+        .onAppear {
+            // Load latest goals
+            allGoals = PersistenceManager.shared.fetchGoals()
+        }
     }
 }
 
