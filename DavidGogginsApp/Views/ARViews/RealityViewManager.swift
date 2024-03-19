@@ -30,7 +30,10 @@ class RealityViewManager {
         // 1. Check if face anchor exists
         guard let arFaceAnchor = arFaceAnchor else {return}
         
-        // 2. Place text on face
+        // 2. Remove current text
+        removeCurrentTextModel()
+        
+        // 3. Place text on face
         placeTextOnFace(text: goalText, arFaceAnchor: arFaceAnchor)
     }
     
@@ -50,7 +53,6 @@ class RealityViewManager {
         // 4. Add FaceAnchorEntity to ARView
         arView.scene.addAnchor(faceAnchorEntity)
     }
-    
     private func createTextModel(with text: String) -> ModelEntity {
         // Mesh
         let textMesh = MeshResource.generateText(
@@ -68,7 +70,6 @@ class RealityViewManager {
         
         return modelEntity
     }
-    
     private func setTextPosition(textModel: ModelEntity, faceAnchor: ARFaceAnchor) {
         // 1. Offset values (x,y,z)
         let xOffset = faceAnchor.rightEyeTransform.position().x - 0.05
@@ -79,6 +80,13 @@ class RealityViewManager {
         
         // 2. Set the text offset
         textModel.setPosition(offset, relativeTo: textModel.parent)
+    }
+    private func removeCurrentTextModel() {
+        // Check if text exists
+        guard let currentTextModel = currentTextModel else {return}
+        
+        // Remove text
+        currentTextModel.removeFromParent()
     }
     
     // Play/Stop Text Video

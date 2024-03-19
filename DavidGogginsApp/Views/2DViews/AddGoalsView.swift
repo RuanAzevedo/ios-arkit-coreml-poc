@@ -13,6 +13,8 @@ struct AddGoalsView: View {
     
     @Binding var isViewShowing: Bool
     
+    var onCompleted: () -> Void = {}
+    
     var body: some View {
         
         ZStack {
@@ -50,6 +52,9 @@ struct AddGoalsView: View {
                     CircleButton(iconName: "checkmark") {
                         // CRUD: Create a new goal
                         addGoalsViewModel.createGoal()
+                        
+                        // Call onCompleted
+                        self.onCompleted()
                         
                         // Dismiss
                         isViewShowing = false

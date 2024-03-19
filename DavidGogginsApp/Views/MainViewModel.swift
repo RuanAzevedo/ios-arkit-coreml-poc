@@ -12,23 +12,24 @@ class MainViewModel: ObservableObject {
     @Published var isAddGoalsViewShowing = false
     @Published var isAllGoalsViewShowing = false
     
-    var allGoals = [
-        "Thing bigger",
-        "Action oftener",
-        "Persevere longer"
-    ]
+    var allGoals: [Goal]?
     
     var currentGoal = 0
     
     func displayNextGoal() {
+        
         // 1. Get next goal
-        let nextGoal = getNextGoal()
+        guard let nextGoal = getNextGoal() else {return}
         
         // 2. Display the goal on face
         RealityViewManager.shared.displayGoalInAR(goalText: nextGoal)
     }
-    
-    private func getNextGoal() -> String {
+    private func getNextGoal() -> String? {
+        
+        guard let allGoals = allGoals, !allGoals.isEmpty else {
+            return nil
+        }
+        
         let nextGoal = allGoals[currentGoal]
         
         // Append
@@ -38,7 +39,10 @@ class MainViewModel: ObservableObject {
             currentGoal = 0
         }
         
-        return nextGoal
+        return nextGoal.goalText
     }
     
+    func fetchLatestGoals() {
+        allGoals = PersistenceManager.shared.fetchGoals()
+    }
 }

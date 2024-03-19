@@ -34,7 +34,10 @@ struct MainView: View {
                     mainViewModel.isAddGoalsViewShowing = true
                 }
                 .popover(isPresented: $mainViewModel.isAddGoalsViewShowing) {
-                    AddGoalsView(isViewShowing: $mainViewModel.isAddGoalsViewShowing)
+                    AddGoalsView(isViewShowing: $mainViewModel.isAddGoalsViewShowing) {
+                        // Fetch latests goals
+                        mainViewModel.fetchLatestGoals()
+                    }
                 }
                 
                 CircleButton(iconName: "view.2d") {
@@ -58,6 +61,11 @@ struct MainView: View {
             }
         }
         .onAppear {
+            
+            // Fetch latests goals from database
+            mainViewModel.fetchLatestGoals()
+            
+            // Starts the ARSession
             RealityViewManager.shared.startARSession()
         }
     }
